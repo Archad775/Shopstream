@@ -46,6 +46,20 @@ Real data never arrives clean. The raw ShopStream exports had exactly the kind o
 
 **Integrity was enforced, not just cleaned:** the clean tables use explicit `PRIMARY KEY`, `NOT NULL`, and `FOREIGN KEY` constraints — so bad data is *prevented*, not just detected. Nothing was silently deleted; every exclusion was counted and documented.
 
+### Before / After
+
+**Region — 17 inconsistent spellings collapsed to 4 clean values:**
+
+| Before | After |
+|---|---|
+| ![Raw region groupings](images/raw_regional_group.png) | ![Cleaned region groupings](images/clean_regional_group.png) |
+
+**Order dates — three formats in one column, standardized to a single date type:**
+
+| Before | After |
+|---|---|
+| ![Raw order dates](images/raw_orders.png) | ![Cleaned order dates](images/clean_orders.png) |
+
 *Why this matters: a dashboard is only as trustworthy as the data beneath it. Most portfolios skip the cleaning story — but it's where the real reliability is earned.*
 
 ---
@@ -110,11 +124,17 @@ ShopStream spends its **two largest budgets** on the **two channels that lose mo
 
 A 3-page Power BI report:
 
-- **Page 1 — Overview:** KPIs with YoY/MoM growth, revenue trend, category & regional breakdown.
-- **Page 2 — Profitability:** margin, returns, and profit contribution by category; product-level profit erosion.
-- **Page 3 — Marketing:** the channel-value discrepancy, CAC vs return, and repeat rates.
+**Page 1 — Overview:** KPIs with YoY/MoM growth, revenue trend, category & regional breakdown.
 
-*(Dashboard screenshots below.)*
+![Overview page](images/page1_overview.png)
+
+**Page 2 — Profitability:** margin, returns, and profit contribution by category; product-level profit erosion.
+
+![Profitability page](images/page2_profitability.png)
+
+**Page 3 — Marketing:** the channel-value discrepancy, CAC vs return, and repeat rates.
+
+![Marketing page](images/page3_marketing.png)
 
 ---
 
@@ -135,9 +155,13 @@ A 3-page Power BI report:
   vw_channel_performance.sql
   shopstream_analysis.sql
 /images
-  page1_overview.png
-  page2_profitability.png
-  page3_marketing.png
+  raw_regional_group.png      # cleaning: before
+  clean_regional_group.png    # cleaning: after
+  raw_orders.png              # cleaning: before (mixed date formats)
+  clean_orders.png            # cleaning: after
+  page1_overview.png          # dashboard
+  page2_profitability.png     # dashboard
+  page3_marketing.png         # dashboard
 README.md
 ```
 
