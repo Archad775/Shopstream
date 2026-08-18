@@ -2,6 +2,8 @@
 
 **An end-to-end analytics project: PostgreSQL → data cleaning → SQL analysis → Power BI**
 
+🔗 **[View the live dashboard](https://app.powerbi.com/groups/me/reports/fcded608-bd4a-4539-9fe9-fe1a235073bc/9d533060eb97e0803723?experience=power-bi)**  |  Built with PostgreSQL + Power BI
+
 > ShopStream's revenue has grown ~50× in three years. But growth was hiding three profit leaks — and the biggest one was self-inflicted: **87% of the marketing budget goes to channels that lose money on every customer they bring in.**
 
 ---
